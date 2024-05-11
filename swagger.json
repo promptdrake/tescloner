@@ -5,13 +5,9 @@
         "description": "API Documentation, Contact [Aisbir](https://t.me/aisbirkoenz) for apikey Pls use apikey in peace",
         "version": "1.0.0"
     },
-    "servers": [
+ "servers": [
         {
-            "url": "http://localhost:3000",
-            "description": "Local server"
-        },
-        {
-            "url": "http://restapi.aisbircubes.my.id",
+            "url": "https://api.aisbircubes.my.id",
             "description": "Production server"
         }
     ],
