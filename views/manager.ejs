@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html data-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aisbir Cubes Apikey Manager</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+  </head>
+  <body>
+  <section class="section">
+    <div class="container">
+      <h1 class="title">
+        Hello Dear ✋🏻
+      </h1>
+      <p class="subtitle" style="margin-top: 10px;">
+        Welcome To Apikey Settings<br>Check The data bellow<br>if your details incorrect contact <a href="https://t.me/aisbirkoenz">@aisbirkoenz</a>
+      </p>
+      <div class="field">
+        <label class="label">Apikey Token</label>
+        <div class="control">
+          <input name="apikey" class="input" disabled value="<%= apikey %>" type="password" placeholder="xxxx-xxxx-xxxx" style="max-width: 500px;">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Apikey Username</label>
+        <div class="control">
+          <input name="username" class="input" disabled value="<%= name %>" type="text" placeholder="xxxx-xxxx-xxxx" style="max-width: 500px;">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Apikey Password</label>
+        <div class="control">
+          <input class="input" name="password" type="input" type="text" disabled value="<%= password %>" placeholder="xxxx-xxxx-xxxx" style="max-width: 500px;">
+        </div>
+      </div>
+       
+      <div class="field">
+        <label class="label">Apikey Type</label>
+        <div class="control">
+          <input name="type" class="input" disabled value="<%= license %>" type="text" placeholder="xxxx-xxxx-xxxx"  style="max-width: 500px;">
+        </div>
+      </div>
+
+        <% if (action == "ip") { %>
+      <div class="field" id="ipsField">
+        <label class="label">New Ip Addressed</label>
+        <div class="control">
+          <input name="ip" class="input" disabled value="<%= ip %>" type="text" name="ip" placeholder="192.168.100.1" style="max-width: 500px;">
+        </div>
+      </div>
+
+      <div class="field" id="ipsField">
+        <label class="label">action.query</label>
+        <div class="control">
+          <input name="action" class="input" disabled value="<%= action %>" type="text" placeholder="192.168.100.1" style="max-width: 500px;">
+        </div>
+      </div>
+        <% } else { %>
+      <article class="message">
+        <div class="message-body">
+          No Action Found In The Request
+          Please Contact the developer if have any question
+          pipe.error
+        </div>
+      </article>
+        <% } %>
+        <progress id="pastibisa" class="progress is-small is-primary" max="100" style="display: none;max-width: 300px;">15%</progress>
+        <div class="notification" id="apisd" style="max-width: 400px;display: none;">
+          <button class="delete" onclick="hide()"></button>
+<span id="result"></span>
+        </div>
+      <div class="field" id="submitField">
+        <button class="button is-primary is-dark" id="byn" style="display: block;" onclick="callme()">Submit</button>
+      </div>
+        </div>
+      
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+  function hide() {
+    document.getElementById("apisd").style.display = "none";
+  }
+  </script>
+  <script>
+    const apikey = document.getElementsByName("apikey")[0].value;
+    const username = document.getElementsByName("username")[0].value;
+    const password = document.getElementsByName("password")[0].value;
+    const type = document.getElementsByName("type")[0].value;
+    const ip = document.getElementsByName("ip")[0].value;
+    const action = document.getElementsByName("action")[0].value;
+const result = document.getElementById("result");
+const apisd = document.getElementById("apisd");
+const pastibisa = document.getElementById("pastibisa");
+async function callme() {
+  hide()
+   if(!apikey || !username || !password || !type || !ip || !action) {
+    alert("Fill Out all data")
+    return;
+   }
+
+   pastibisa.style.display = "block";
+ 
+   await fetch("../submitchanges", {
+    method: "POST",
+    headers: {
+    "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+    apikey: apikey,
+    username: username,
+    password: password,
+    type: type,
+    ip: ip,
+    action: action
+    })
+   }).then(async(res) => {
+    const data = await res.json();
+    console.log(data)
+    pastibisa.style.display = "none";
+result.innerHTML = data.mess;
+apisd.style.display = "block";
+   })
+  }
+  </script>
+</body>
+</html>

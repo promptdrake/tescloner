@@ -1,0 +1,733 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Aisbir Rest APi",
+        "description": "API Documentation, Contact [Aisbir](https://t.me/aisbirkoenz) for apikey Pls use apikey in peace",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000",
+            "description": "Local server"
+        },
+        {
+            "url": "http://restapi.aisbircubes.my.id",
+            "description": "Production server"
+        }
+    ],
+
+    
+    "tags": [
+        {
+            "name": "Aisbir APis",
+            "description": "User authentication"
+        },
+        {
+            "name": "Downloader",
+            "description": "App downloader"
+        },
+        {
+          "name": "Ai",
+          "description": "apa itu ai?"
+        },
+        {
+          "name": "Fun",
+          "description": "Fun Api"
+        },
+        {
+          "name": "Maker",
+          "description": "An Image Maker"
+        },
+        {
+          "name": "Server",
+          "description": "server stats"
+        }
+    ],
+    "produces": ["application/json"],
+    "paths": {
+    "/api/v1/ipv4": {
+		"get": {
+		  "tags": ["Aisbir APis"],
+		  "description": "Get User ipv4",
+		  "parameters": [],
+		  "responses": {
+        "200": {
+         "description": "Api Is Working"
+        },
+        "400": {
+            "description": "Bad Request"
+        },
+        "401": {
+"description": "Unauthorized"
+        }
+          }
+		}
+	  },
+
+    "/api/v1/runtime": {
+      "get": {
+        "tags": ["Server"],
+        "description": "Runtime",
+        "parameters": [],
+        "responses": {
+          "200": {
+           "description": "Api Is Working"
+          },
+          "400": {
+              "description": "Bad Request"
+          },
+          "401": {
+  "description": "Unauthorized"
+          }
+            }
+      }
+      },
+
+      "/api/v1/spec": {
+        "get": {
+          "tags": ["Server"],
+          "description": "spec",
+          "parameters": [],
+          "responses": {
+            "200": {
+             "description": "Api Is Working"
+            },
+            "400": {
+                "description": "Bad Request"
+            },
+            "401": {
+    "description": "Unauthorized"
+            }
+              }
+        }
+        },
+    "/api/v1/auth/key": {
+		"get": {
+		  "tags": ["Aisbir APis"],
+		  "description": "Get User apikey",
+		  "parameters": [
+            { "name": "apikey", "in": "query", "required": true, "type": "string" },
+            { "name": "type", "in": "query", "required": true, "type": "string" }
+          ],
+		  "responses": {
+        "200": {
+          "description": "Api Is Working"
+         },
+         "400": {
+             "description": "Bad Request"
+         },
+         "401": {
+ "description": "Unauthorized"
+         }
+      }
+		}
+	  },
+
+    "/api/v1/updater/co": {
+      "get": {
+        "tags": ["Aisbir APis"],
+        "description": "Get User apikey",
+        "parameters": [
+              { "name": "apikey", "in": "query", "required": true, "type": "string" },
+              { "name": "type", "in": "query", "required": true, "type": "string" }
+            ],
+        "responses": {
+          "200": {
+            "description": "Api Is Working"
+           },
+           "400": {
+               "description": "Bad Request"
+           },
+           "401": {
+   "description": "Unauthorized"
+           }
+        }
+      }
+      },
+
+      "/api/v1/dl/tiktokdl": {
+        "get": {
+          "tags": ["Downloader"],
+          "description": "Tiktok downloader",
+          "parameters": [
+                { "name": "apikey", "in": "query", "required": true, "type": "string" },
+                { "name": "url", "in": "query", "required": true, "type": "string" }
+              ],
+          "responses": {
+            "200": {
+              "description": "Api Is Working"
+             },
+             "400": {
+                 "description": "Bad Request"
+             },
+             "401": {
+     "description": "Unauthorized"
+             }
+          }
+        }
+        },
+
+        "/api/v1/dl/igdl": {
+          "get": {
+            "tags": ["Downloader"],
+            "description": "Instagram Downloader",
+            "parameters": [
+                  { "name": "apikey", "in": "query", "required": true, "type": "string" },
+                  { "name": "url", "in": "query", "required": true, "type": "string" }
+                ],
+            "responses": {
+              "200": {
+                "description": "Api Is Working"
+               },
+               "400": {
+                   "description": "Bad Request"
+               },
+               "401": {
+       "description": "Unauthorized"
+               }
+            }
+          }
+          },
+
+          "/api/v1/dl/ytvideo": {
+            "get": {
+              "tags": ["Downloader"],
+              "description": "Youtube Downloader",
+              "parameters": [
+                    { "name": "apikey", "in": "query", "required": true, "type": "string" },
+                    { "name": "url", "in": "query", "required": true, "type": "string" }
+                  ],
+              "responses": {
+                "200": {
+                  "description": "Api Is Working"
+                 },
+                 "400": {
+                     "description": "Bad Request"
+                 },
+                 "401": {
+         "description": "Unauthorized"
+                 }
+              }
+            }
+            },
+
+
+            "/api/v1/dl/ytmusic": {
+              "get": {
+                "tags": ["Downloader"],
+                "description": "Youtube Downloader",
+                "parameters": [
+                      { "name": "apikey", "in": "query", "required": true, "type": "string" },
+                      { "name": "url", "in": "query", "required": true, "type": "string" }
+                    ],
+                "responses": {
+                  "200": {
+                    "description": "Api Is Working"
+                   },
+                   "400": {
+                       "description": "Bad Request"
+                   },
+                   "401": {
+           "description": "Unauthorized"
+                   }
+                }
+              }
+              },
+              "/api/v1/dl/fbdl": {
+                "get": {
+                  "tags": ["Downloader"],
+                  "description": "Facebook Downloader",
+                  "parameters": [
+                        { "name": "apikey", "in": "query", "required": true, "type": "string" },
+                        { "name": "url", "in": "query", "required": true, "type": "string" }
+                      ],
+                  "responses": {
+                    "200": {
+                      "description": "Api Is Working"
+                     },
+                     "400": {
+                         "description": "Bad Request"
+                     },
+                     "401": {
+             "description": "Unauthorized"
+                     }
+                  }
+                }
+                },
+
+
+
+                "/api/v1/fun/tobinner": {
+                  "get": {
+                    "tags": ["Fun"],
+                    "description": "Binnary Converter",
+                    "parameters": [
+                          { "name": "apikey", "in": "query", "required": true, "type": "string" },
+                          { "name": "text", "in": "query", "required": true, "type": "string" }
+                        ],
+                    "responses": {
+                      "200": {
+                        "description": "Api Is Working"
+                       },
+                       "400": {
+                           "description": "Bad Request"
+                       },
+                       "401": {
+               "description": "Unauthorized"
+                       }
+                    }
+                  }
+                  },
+                  "/api/v1/fun/decrypt": {
+                    "get": {
+                      "tags": ["Fun"],
+                      "description": "Binnary to text Converter",
+                      "parameters": [
+                            { "name": "apikey", "in": "query", "required": true, "type": "string" },
+                            { "name": "text", "in": "query", "required": true, "type": "string" }
+                          ],
+                      "responses": {
+                        "200": {
+                          "description": "Api Is Working"
+                         },
+                         "400": {
+                             "description": "Bad Request"
+                         },
+                         "401": {
+                 "description": "Unauthorized"
+                         }
+                      }
+                    }
+                    },
+                    "/api/v1/fun/family100": {
+                      "get": {
+                        "tags": ["Fun"],
+                        "description": "Family 100 Game",
+                        "parameters": [
+                              { "name": "apikey", "in": "query", "required": true, "type": "string" }
+                            ],
+                        "responses": {
+                          "200": {
+                            "description": "Api Is Working"
+                           },
+                           "400": {
+                               "description": "Bad Request"
+                           },
+                           "401": {
+                   "description": "Unauthorized"
+                           }
+                        }
+                      }
+                      },
+                      "/api/v1/fun/imagequote": {
+                        "get": {
+                          "tags": ["Maker"],
+                          "description": "Make Quote Image",
+                          "parameters": [
+                                { "name": "apikey", "in": "query", "required": true, "type": "string" },
+                                { "name": "image", "in": "query", "required": true, "type": "url" },
+                                { "name": "text", "in": "query", "required": true, "type": "string" },
+                                { "name": "author", "in": "query", "required": true, "type": "string" }
+                              ],
+                          "responses": {
+                            "200": {
+                              "description": "Api Is Working"
+                             },
+                             "400": {
+                                 "description": "Bad Request"
+                             },
+                             "401": {
+                     "description": "Unauthorized"
+                             }
+                          }
+                        }
+                        },
+
+
+                        "/api/v1/fun/welcomer": {
+                          "get": {
+                            "tags": ["Maker"],
+                            "description": "Make Welcomer",
+                            "parameters": [
+                                  { "name": "apikey", "in": "query", "required": true, "type": "string" },
+                                  { "name": "background", "in": "query", "required": true, "type": "url" },
+                                  { "name": "text1", "in": "query", "required": true, "type": "string" },
+                                  { "name": "text2", "in": "query", "required": true, "type": "string" },
+                                  { "name": "text3", "in": "query", "required": true, "type": "string" },
+                                  { "name": "avatar", "in": "query", "required": true, "type": "url" }
+                                ],
+                            "responses": {
+                              "200": {
+                                "description": "Api Is Working"
+                               },
+                               "400": {
+                                   "description": "Bad Request"
+                               },
+                               "401": {
+                       "description": "Unauthorized"
+                               }
+                            }
+                          }
+                          },
+
+
+                          "/api/v1/fun/hue": {
+                            "get": {
+                              "tags": ["Maker"],
+                              "description": "Change color",
+                              "parameters": [
+                                    { "name": "apikey", "in": "query", "required": true, "type": "string" },
+                                    { "name": "image", "in": "query", "required": true, "type": "url" },
+                                    { "name": "deg", "in": "query", "required": true, "type": "string" }
+                                  ],
+                              "responses": {
+                                "200": {
+                                  "description": "Api Is Working"
+                                 },
+                                 "400": {
+                                     "description": "Bad Request"
+                                 },
+                                 "401": {
+                         "description": "Unauthorized"
+                                 }
+                              }
+                            }
+                            },
+                            "/api/v1/fun/nokia": {
+                              "get": {
+                                "tags": ["Maker"],
+                                "description": "Nokia Jir",
+                                "parameters": [
+                                      { "name": "apikey", "in": "query", "required": true, "type": "string" },
+                                      { "name": "image", "in": "query", "required": true, "type": "url" }
+                                     
+                                    ],
+                                "responses": {
+                                  "200": {
+                                    "description": "Api Is Working"
+                                   },
+                                   "400": {
+                                       "description": "Bad Request"
+                                   },
+                                   "401": {
+                           "description": "Unauthorized"
+                                   }
+                                }
+                              }
+                              },
+                              "/api/v1/fun/adios": {
+                                "get": {
+                                  "tags": ["Maker"],
+                                  "description": "Adios",
+                                  "parameters": [
+                                        { "name": "apikey", "in": "query", "required": true, "type": "string" },
+                                        { "name": "image", "in": "query", "required": true, "type": "url" }
+                                       
+                                      ],
+                                  "responses": {
+                                    "200": {
+                                      "description": "Api Is Working"
+                                     },
+                                     "400": {
+                                         "description": "Bad Request"
+                                     },
+                                     "401": {
+                             "description": "Unauthorized"
+                                     }
+                                  }
+                                }
+                                },
+
+                                "/api/v1/fun/archivement": {
+                                  "get": {
+                                    "tags": ["Maker"],
+                                    "description": "Adios",
+                                    "parameters": [
+                                          { "name": "apikey", "in": "query", "required": true, "type": "string" },
+                                          { "name": "text", "in": "query", "required": true, "type": "texy" }
+                                        ],
+                                    "responses": {
+                                      "200": {
+                                        "description": "Api Is Working"
+                                       },
+                                       "400": {
+                                           "description": "Bad Request"
+                                       },
+                                       "401": {
+                               "description": "Unauthorized"
+                                       }
+                                    }
+                                  }
+                                  },
+
+                                  "/api/v1/fun/supreme": {
+                                    "get": {
+                                      "tags": ["Maker"],
+                                      "description": "Adios",
+                                      "parameters": [
+                                            { "name": "apikey", "in": "query", "required": true, "type": "string" },
+                                            { "name": "text", "in": "query", "required": true, "type": "texy" }
+                                          ],
+                                      "responses": {
+                                        "200": {
+                                          "description": "Api Is Working"
+                                         },
+                                         "400": {
+                                             "description": "Bad Request"
+                                         },
+                                         "401": {
+                                 "description": "Unauthorized"
+                                         }
+                                      }
+                                    }
+                                    },
+                              "/api/v1/fun/jail": {
+                                "get": {
+                                  "tags": ["Maker"],
+                                  "description": "Nokia Jir",
+                                  "parameters": [
+                                        { "name": "apikey", "in": "query", "required": true, "type": "string" },
+                                        { "name": "image", "in": "query", "required": true, "type": "url" }
+                                       
+                                      ],
+                                  "responses": {
+                                    "200": {
+                                      "description": "Api Is Working"
+                                     },
+                                     "400": {
+                                         "description": "Bad Request"
+                                     },
+                                     "401": {
+                             "description": "Unauthorized"
+                                     }
+                                  }
+                                }
+                                },
+
+                                "/api/v1/fun/sadcat": {
+                                  "get": {
+                                    "tags": ["Maker"],
+                                    "description": "sad",
+                                    "parameters": [
+                                          { "name": "apikey", "in": "query", "required": true, "type": "string" },
+                                          { "name": "text", "in": "query", "required": true, "type": "url" }
+                                         
+                                        ],
+                                    "responses": {
+                                      "200": {
+                                        "description": "Api Is Working"
+                                       },
+                                       "400": {
+                                           "description": "Bad Request"
+                                       },
+                                       "401": {
+                               "description": "Unauthorized"
+                                       }
+                                    }
+                                  }
+                                  },
+                                  "/api/v1/fun/communism": {
+                                    "get": {
+                                      "tags": ["Maker"],
+                                      "description": "apa lo",
+                                      "parameters": [
+                                            { "name": "apikey", "in": "query", "required": true, "type": "string" },
+                                            { "name": "image", "in": "query", "required": true, "type": "url" }
+                                           
+                                          ],
+                                      "responses": {
+                                        "200": {
+                                          "description": "Api Is Working"
+                                         },
+                                         "400": {
+                                             "description": "Bad Request"
+                                         },
+                                         "401": {
+                                 "description": "Unauthorized"
+                                         }
+                                      }
+                                    }
+                                    },
+                                    "/api/v1/fun/wanted": {
+                                      "get": {
+                                        "tags": ["Maker"],
+                                        "description": "apa lo",
+                                        "parameters": [
+                                              { "name": "apikey", "in": "query", "required": true, "type": "string" },
+                                              { "name": "image", "in": "query", "required": true, "type": "url" }
+                                             
+                                            ],
+                                        "responses": {
+                                          "200": {
+                                            "description": "Api Is Working"
+                                           },
+                                           "400": {
+                                               "description": "Bad Request"
+                                           },
+                                           "401": {
+                                   "description": "Unauthorized"
+                                           }
+                                        }
+                                      }
+                                      },
+                                      "/api/v1/fun/drip": {
+                                        "get": {
+                                          "tags": ["Maker"],
+                                          "description": "apa lo",
+                                          "parameters": [
+                                                { "name": "apikey", "in": "query", "required": true, "type": "string" },
+                                                { "name": "image", "in": "query", "required": true, "type": "url" }
+                                               
+                                              ],
+                                          "responses": {
+                                            "200": {
+                                              "description": "Api Is Working"
+                                             },
+                                             "400": {
+                                                 "description": "Bad Request"
+                                             },
+                                             "401": {
+                                     "description": "Unauthorized"
+                                             }
+                                          }
+                                        }
+                                        },
+                                        "/api/v1/fun/blur": {
+                                          "get": {
+                                            "tags": ["Maker"],
+                                            "description": "apa lo",
+                                            "parameters": [
+                                                  { "name": "apikey", "in": "query", "required": true, "type": "string" },
+                                                  { "name": "image", "in": "query", "required": true, "type": "url" }
+                                                 
+                                                ],
+                                            "responses": {
+                                              "200": {
+                                                "description": "Api Is Working"
+                                               },
+                                               "400": {
+                                                   "description": "Bad Request"
+                                               },
+                                               "401": {
+                                       "description": "Unauthorized"
+                                               }
+                                            }
+                                          }
+                                          },
+                                          "/api/v1/fun/invert": {
+                                            "get": {
+                                              "tags": ["Maker"],
+                                              "description": "apa lo",
+                                              "parameters": [
+                                                    { "name": "apikey", "in": "query", "required": true, "type": "string" },
+                                                    { "name": "image", "in": "query", "required": true, "type": "url" }
+                                                   
+                                                  ],
+                                              "responses": {
+                                                "200": {
+                                                  "description": "Api Is Working"
+                                                 },
+                                                 "400": {
+                                                     "description": "Bad Request"
+                                                 },
+                                                 "401": {
+                                         "description": "Unauthorized"
+                                                 }
+                                              }
+                                            }
+                                            },
+                                            "/api/v1/fun/greyscale": {
+                                              "get": {
+                                                "tags": ["Maker"],
+                                                "description": "apa lo",
+                                                "parameters": [
+                                                      { "name": "apikey", "in": "query", "required": true, "type": "string" },
+                                                      { "name": "image", "in": "query", "required": true, "type": "url" }
+                                                     
+                                                    ],
+                                                "responses": {
+                                                  "200": {
+                                                    "description": "Api Is Working"
+                                                   },
+                                                   "400": {
+                                                       "description": "Bad Request"
+                                                   },
+                                                   "401": {
+                                           "description": "Unauthorized"
+                                                   }
+                                                }
+                                              }
+                                              },
+                                              "/api/v1/ai/translate": {
+                                                "get": {
+                                                  "tags": ["Ai"],
+                                                  "description": "apa lo",
+                                                  "parameters": [
+                                                        { "name": "apikey", "in": "query", "required": true, "type": "string" },
+                                                        { "name": "text", "in": "query", "required": true, "type": "string" },
+                                                        { "name": "to", "in": "query", "required": true, "type": "string" }
+                                                       
+                                                      ],
+                                                  "responses": {
+                                                    "200": {
+                                                      "description": "Api Is Working"
+                                                     },
+                                                     "400": {
+                                                         "description": "Bad Request"
+                                                     },
+                                                     "401": {
+                                             "description": "Unauthorized"
+                                                     }
+                                                  }
+                                                }
+                                                },
+                                                "/api/v1/ai/bard": {
+                                                  "get": {
+                                                    "tags": ["Ai"],
+                                                    "description": "apa lo",
+                                                    "parameters": [
+                                                          { "name": "apikey", "in": "query", "required": true, "type": "string" },
+                                                          { "name": "text", "in": "query", "required": true, "type": "string" }
+                                                         
+                                                        ],
+                                                    "responses": {
+                                                      "200": {
+                                                        "description": "Api Is Working"
+                                                       },
+                                                       "400": {
+                                                           "description": "Bad Request"
+                                                       },
+                                                       "401": {
+                                               "description": "Unauthorized"
+                                                       }
+                                                    }
+                                                  }
+                                                  },
+                                                "/api/v1/ai/simi": {
+                                                  "get": {
+                                                    "tags": ["Ai"],
+                                                    "description": "apa lo",
+                                                    "parameters": [
+                                                          { "name": "apikey", "in": "query", "required": true, "type": "string" },
+                                                          { "name": "text", "in": "query", "required": true, "type": "string" }
+                                                      
+                                                         
+                                                        ],
+                                                    "responses": {
+                                                      "200": {
+                                                        "description": "Api Is Working"
+                                                       },
+                                                       "400": {
+                                                           "description": "Bad Request"
+                                                       },
+                                                       "401": {
+                                               "description": "Unauthorized"
+                                                       }
+                                                    }
+                                                  }
+                                                  }
+
+                                      
+  
+    }
+}
