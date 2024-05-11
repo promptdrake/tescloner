@@ -1,12 +1,17 @@
 [
   {
-    "key": "gcrgnaqq38hgbon8qc96dw",
-    "limit": 99999999999999999999999999999999999,
-    "ip": "192.168.100.1"
+    "key": "on8yhw137m9bn6ijxfdiql",
+    "limit": 20,
+    "ip": "::1"
   },
   {
-    "key": "bakso",
-    "limit": 98,
-    "ip": "192.168.100.1"
+    "key": "odifjoejfojql",
+    "limit": 20,
+    "ip": "::1"
+  },
+  {
+    "key": "odejcoewjojl",
+    "limit": 20,
+    "ip": "::1"
   }
 ]

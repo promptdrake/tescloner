@@ -2,12 +2,16 @@
     "openapi": "3.0.0",
     "info": {
         "title": "Aisbir Rest APi",
-        "description": "API Documentation, [Whatsapp Group](https://chat.whatsapp.com/Ctkzu6cmHasDYaYtPFdHyN) For free rest api key, we doesnt support abusing",
+        "description": "API Documentation, Contact [Aisbir](https://t.me/aisbirkoenz) for apikey Pls use apikey in peace",
         "version": "1.0.0"
     },
- "servers": [
+    "servers": [
         {
-            "url": "https://api.aisbircubes.my.id",
+            "url": "http://localhost:3000",
+            "description": "Local server"
+        },
+        {
+            "url": "http://restapi.aisbircubes.my.id",
             "description": "Production server"
         }
     ],
