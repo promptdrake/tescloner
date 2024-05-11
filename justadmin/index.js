@@ -11,7 +11,7 @@ addUpdate,
 deleteApiKey,
 createApikey,
 changeIp } = require('../lib/checkapi');
-
+const { createApikeyz} = require('../lib/apibot')
 const manager = require('./manager');
 router.use('/manager', manager);
 
@@ -73,7 +73,22 @@ router.post('/auth/createapikey', async(req, res) => {
         result: data
     })
   });
-
+  router.get('/createapikeybot', async(req, res) => {
+    const ip = req.ip
+const data = await createApikeyz(ip);
+if (!data) {
+return res.status(401).json({
+  status: false,
+  message: "Failed to create apikey, Your ip addressed Recently Have been created apikey"
+})
+}
+res.json({
+  status: true,
+  message: "Your Apikey Has Been Generated",
+  result: data,
+    reset_limit: req.hostname + "/api/v1/resetlimit?apikey=" + data.apikey,
+})
+     });
   router.post('/auth/deleteapikey', async(req, res) => {
     const { type, key } = req.query
     const token = req.headers["auth"];

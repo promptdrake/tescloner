@@ -6,11 +6,14 @@ app.listen(port, () => {
   /* eslint-enable no-console */
 });
 
-
-const api = require("caliph-api");
-async function main() {
-  console.log("Wet")
- const k = await api.tools.whois("aisbircubes.my.id")
- console.log(k)
+const fs = require("fs")
+async function resetLimit() {
+  const db = JSON.parse(fs.readFileSync('./database/api.json', "utf-8"))
+  for (const data of db) {
+      data.limit = 20
+      fs.writeFileSync('./database/api.json', JSON.stringify(db, null, 2))
+  }
+  console.log("Reset Limit Success")
 }
-main()
+
+setInterval(resetLimit, 1800000);
